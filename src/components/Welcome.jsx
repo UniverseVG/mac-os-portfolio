@@ -28,7 +28,7 @@ const renderText = (text, className, type) => {
 };
 
 const setupTextHover = (container, type) => {
-  if (!container) return;
+  if (!container) return () => {};
   const letters = container.querySelectorAll("span");
   const { min, max, default: base } = FONT_WEIGHTS[type];
 
@@ -79,7 +79,7 @@ const Welcome = () => {
       titleCleanup();
       subtitleCleanup();
     };
-  });
+  }, []);
   return (
     <section id="welcome">
       <p ref={titleRef}>
