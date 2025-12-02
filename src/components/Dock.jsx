@@ -66,8 +66,6 @@ const Dock = () => {
     } else {
       openWindow(app.id);
     }
-
-    openWindow(app.id);
   };
 
   return (
