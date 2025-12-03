@@ -7,12 +7,13 @@ import React, { useLayoutEffect, useRef } from "react";
 const WindowWrapper = (Component, windowKey) => {
   const Wrapped = (props) => {
     const { focusWindow, windows } = useWindowStore();
-    const { isOpen, zIndex } = windows[windowKey];
+    const windowState = windows[windowKey];
+    const { isOpen, zIndex } = windowState;
     const ref = useRef(null);
 
     useGSAP(() => {
       const el = ref.current;
-      if (!el || isOpen) return;
+      if (!el || !isOpen) return;
       el.style.display = "block";
       gsap.fromTo(
         el,
