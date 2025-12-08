@@ -420,7 +420,7 @@ body {
 
     #window-header {
       p {
-        @apply font-bold text-[#5f6266];
+        @apply font-bold text-[#5f6266] text-center w-full;
       }
     }
 
